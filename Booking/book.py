@@ -34,9 +34,9 @@ class booking:
 		l = fp.read()
 		l = l.split(' ')
 		fp.close()
-		self.rows = int(l[1])
-		self.seats= int(l[0])
-		self.booking = [['S' for j in range(self.rows)] for i in range(self.seats)]
+		self.rows = int(l[0])
+		self.seats= int(l[1])
+		self.booking = [['S' for j in range(self.seats)] for i in range(self.rows)]
 		self.row = 1
 		self.seat = 1
 		self.i = 0
@@ -49,12 +49,12 @@ class booking:
 
 # object method to show booked seats
 	def show_seats(self):
-	    for i in range(self.seats+1):
+	    for i in range(self.rows+1):
 	        if i==0:
 	            print(' ',end=' ')
 	        else:
 	            print(i,' ',end = ' ')
-	        for j in range(self.rows+1):
+	        for j in range(self.seats+1):
 	            if j == 0 and i == 0:
 	                print(' ',end = ' ')
 	            elif i == 0 and j>=1:
